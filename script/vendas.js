@@ -6,11 +6,13 @@ const form = document.getElementById('formCompra');
 form.addEventListener('submit', async (e) => {
     e.preventDefault();
     
+    const tipoSelecionado = document.querySelector('input[name="item"]:checked').value;
+    
     const pedido = {
         nome: document.getElementById('nome').value,
         whatsapp: document.getElementById('whatsapp').value,
-        tipo: document.getElementById('tipoPedido').value,
-        valor: document.getElementById('tipoPedido').value === 'combo' ? 15 : 10,
+        tipo: tipoSelecionado,
+        valor: tipoSelecionado === 'combo' ? 15 : 10,
         status: "pendente",
         validado: false,
         data: new Date()
@@ -21,7 +23,7 @@ form.addEventListener('submit', async (e) => {
         
         // Mostrar área do PIX e QR Code
         document.getElementById('areaPix').classList.remove('hidden');
-        document.getElementById('pedidoId').innerText = `ID: ${docRef.id}`;
+        document.getElementById('formCompra').classList.add('hidden');
         
         // Gera QR Code com o ID do documento
         new QRCode(document.getElementById("qrcode"), {
@@ -33,5 +35,6 @@ form.addEventListener('submit', async (e) => {
         alert("Pedido registrado! Realize o pagamento via PIX.");
     } catch (e) {
         console.error("Erro ao salvar: ", e);
+        alert("Erro ao processar pedido: " + e.message);
     }
 });
