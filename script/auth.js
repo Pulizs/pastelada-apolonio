@@ -20,6 +20,9 @@ form.addEventListener('submit', (e) => {
             case 'caixa':
                 window.location.href = 'caixa.html';
                 break;
+            case 'bar':
+                window.location.href = 'bar.html';
+                break;
             case 'tesoureiro':
                 window.location.href = 'tesoureiro.html';
                 break;
