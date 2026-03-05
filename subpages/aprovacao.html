@@ -14,7 +14,10 @@
     <nav class="bg-royal-blue p-5 text-white shadow-xl border-b-4 border-gold">
         <div class="max-w-4xl mx-auto flex justify-between items-center">
             <h1 class="font-black tracking-tighter text-xl">APROVAÇÃO <span class="text-gold">PIX</span></h1>
-            <a href="tesoureiro.html" class="text-sm bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition">Ver Dashboard</a>
+            <div class="flex gap-3">
+                <a href="tesoureiro.html" class="text-sm bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition">Ver Dashboard</a>
+                <button onclick="fazerLogout()" class="text-sm bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition">Sair</button>
+            </div>
         </div>
     </nav>
 
@@ -29,6 +32,7 @@
         </div>
     </main>
 
+    <script src="../script/admin-auth.js"></script>
     <script type="module" src="../script/aprovacao.js"></script>
 </body>
 </html>

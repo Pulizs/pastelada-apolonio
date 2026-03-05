@@ -13,7 +13,7 @@
 <body class="bg-gray-100 min-h-screen">
     <nav class="bg-royal-blue p-4 text-white flex justify-between items-center shadow-md">
         <span class="font-bold tracking-tighter">PAINEL DO CAIXA</span>
-        <a href="../index.html" class="text-xs border border-white/30 px-2 py-1 rounded">Sair</a>
+        <button onclick="fazerLogout()" class="text-xs border border-white/30 px-2 py-1 rounded">Sair</button>
     </nav>
 
     <div class="max-w-xl mx-auto p-4">
@@ -37,12 +37,15 @@
                     <p id="resTipo" class="text-gold font-bold">COMBO PASTEL + REFRI</p>
                     <p id="resTel" class="text-gray-400 text-sm">(41) 99999-9999</p>
                 </div>
-                <span class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Pago</span>
+                <span id="resStatus" class="bg-green-100 text-green-700 text-xs font-bold px-3 py-1 rounded-full uppercase">Pago</span>
             </div>
-            <button class="w-full mt-6 bg-royal-blue text-white py-4 rounded-xl font-bold shadow-lg shadow-blue-200">
+            <button id="btnEntrega" class="w-full mt-6 bg-royal-blue text-white py-4 rounded-xl font-bold shadow-lg shadow-blue-200 hover:brightness-125 transition">
                 CONFIRMAR ENTREGA
             </button>
         </div>
     </div>
+
+    <script src="../script/admin-auth.js"></script>
+    <script type="module" src="../script/caixa.js"></script>
 </body>
 </html>

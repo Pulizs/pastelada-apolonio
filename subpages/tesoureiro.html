@@ -7,28 +7,36 @@
     <style>
         .bg-royal-blue { background-color: #002366; }
         .text-gold { color: #C5A059; }
+        .border-gold { border-color: #C5A059; }
     </style>
 </head>
 <body class="bg-slate-50 min-h-screen">
-    <div class="p-6">
+    <nav class="bg-royal-blue p-5 text-white shadow-xl border-b-4 border-gold">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <h1 class="font-black tracking-tighter text-xl">FINANCEIRO <span class="text-gold">DEMOLAY</span></h1>
+            <button onclick="fazerLogout()" class="text-sm bg-white/10 px-4 py-2 rounded-lg hover:bg-white/20 transition">Sair</button>
+        </div>
+    </nav>
+
+    <div class="p-6 max-w-6xl mx-auto">
         <h1 class="text-3xl font-black text-royal-blue mb-8">Financeiro <span class="text-gold">DeMolay</span></h1>
 
         <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <p class="text-gray-400 text-sm font-bold uppercase">Total Arrecadado</p>
-                <p class="text-3xl font-black text-green-600">R$ 1.250,00</p>
+                <p id="valBruto" class="text-3xl font-black text-green-600">R$ 0,00</p>
             </div>
             <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <p class="text-gray-400 text-sm font-bold uppercase">Lotes Vendidos</p>
-                <p class="text-3xl font-black text-royal-blue">84</p>
+                <p id="qtdTotal" class="text-3xl font-black text-royal-blue">0</p>
             </div>
             <div class="bg-royal-blue p-6 rounded-3xl shadow-xl">
                 <p class="text-white/60 text-sm font-bold uppercase">Lucro Estimado</p>
-                <p class="text-3xl font-black text-gold">R$ 840,00</p>
+                <p id="valLucro" class="text-3xl font-black text-gold">R$ 0,00</p>
             </div>
             <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <p class="text-gray-400 text-sm font-bold uppercase">Gasto (Custos)</p>
-                <p class="text-3xl font-black text-red-500">R$ 410,00</p>
+                <p id="valCusto" class="text-3xl font-black text-red-500">R$ 0,00</p>
             </div>
         </div>
 
@@ -44,17 +52,20 @@
                 <tbody class="divide-y divide-gray-100 font-medium">
                     <tr>
                         <td class="px-6 py-4 italic">Pastel Avulso</td>
-                        <td class="px-6 py-4">40</td>
-                        <td class="px-6 py-4 text-royal-blue">R$ 400,00</td>
+                        <td id="detalhePastel" class="px-6 py-4">0</td>
+                        <td class="px-6 py-4 text-royal-blue" id="detalhePastelValor">R$ 0,00</td>
                     </tr>
                     <tr>
                         <td class="px-6 py-4 italic">Combo Completo</td>
-                        <td class="px-6 py-4">44</td>
-                        <td class="px-6 py-4 text-royal-blue">R$ 660,00</td>
+                        <td id="detalheCombo" class="px-6 py-4">0</td>
+                        <td class="px-6 py-4 text-royal-blue" id="detalheComboValor">R$ 0,00</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
+
+    <script src="../script/admin-auth.js"></script>
+    <script type="module" src="../script/tesoureiro.js"></script>
 </body>
 </html>
