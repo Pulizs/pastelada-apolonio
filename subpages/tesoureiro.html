@@ -25,6 +25,7 @@
             <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <p class="text-gray-400 text-sm font-bold uppercase">Total Arrecadado</p>
                 <p id="valBruto" class="text-3xl font-black text-green-600">R$ 0,00</p>
+                <p class="text-xs text-gray-500 mt-1" id="detalheBruto">(Pastel + Presencial)</p>
             </div>
             <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
                 <p class="text-gray-400 text-sm font-bold uppercase">Lotes Vendidos</p>
@@ -60,8 +61,24 @@
                         <td id="detalheCombo" class="px-6 py-4">0</td>
                         <td class="px-6 py-4 text-royal-blue" id="detalheComboValor">R$ 0,00</td>
                     </tr>
+                    <tr class="bg-gray-50 font-bold text-gray-700">
+                        <td colspan="3" class="px-6 py-3">🏪 VENDAS PRESENCIAIS</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 italic">Pastéis Avulsos (Presenciais)</td>
+                        <td id="detalhePresencialPastel" class="px-6 py-4">0</td>
+                        <td class="px-6 py-4 text-orange-600 font-bold" id="detalhePresencialPastelValor">R$ 0,00</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 italic">Combos (Presenciais)</td>
+                        <td id="detalhePresencialCombo" class="px-6 py-4">0</td>
+                        <td class="px-6 py-4 text-purple-600 font-bold" id="detalhePresencialComboValor">R$ 0,00</td>
+                    </tr>
+                    <tr class="bg-gray-50 font-bold text-gray-700">
+                        <td colspan="3" class="px-6 py-3">🥤 BEBIDAS (BAR)</td>
+                    </tr>
                     <tr class="bg-blue-50">
-                        <td class="px-6 py-4 italic font-bold text-blue-600">🥤 Água</td>
+                        <td class="px-6 py-4 italic font-bold text-blue-600">💧 Água</td>
                         <td id="detalheAgua" class="px-6 py-4 font-bold text-blue-600">0</td>
                         <td class="px-6 py-4 text-blue-600 font-bold" id="detalheAguaValor">R$ 0,00</td>
                     </tr>

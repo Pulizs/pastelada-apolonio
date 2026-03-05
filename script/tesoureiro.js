@@ -3,6 +3,7 @@ import { collection, onSnapshot, query } from "https://www.gstatic.com/firebasej
 
 const vRef = collection(db, "vendas");
 const barRef = collection(db, "vendas_bar");
+const presencialRef = collection(db, "vendas_presenciais");
 const custoUnidade = 4.50; // Edite o custo real aqui
 
 // Monitoramento em tempo real das vendas de pastel e bebidas
@@ -72,3 +73,38 @@ onSnapshot(query(barRef), (snapshot) => {
     document.getElementById('detalheSuco').innerText = qtdSuco;
     document.getElementById('detalheSucoValor').innerText = `R$ ${totalSuco.toFixed(2)}`;
 });
+
+// Monitoramento em tempo real das vendas presenciais
+onSnapshot(query(presencialRef), (snapshot) => {
+    let totalPresencial = 0;
+    let qtdPresencialPastel = 0;
+    let qtdPresencialCombo = 0;
+
+    snapshot.forEach((doc) => {
+        const dados = doc.data();
+        totalPresencial += dados.total || 0;
+        if (dados.tipo === 'pastel') qtdPresencialPastel += dados.quantidade || 0;
+        if (dados.tipo === 'combo') qtdPresencialCombo += dados.quantidade || 0;
+    });
+
+    // Atualiza o HTML
+    document.getElementById('detalhePresencialPastel').innerText = qtdPresencialPastel;
+    document.getElementById('detalhePresencialPastelValor').innerText = `R$ ${(qtdPresencialPastel * 10).toFixed(2)}`;
+    document.getElementById('detalhePresencialCombo').innerText = qtdPresencialCombo;
+    document.getElementById('detalhePresencialComboValor').innerText = `R$ ${(qtdPresencialCombo * 15).toFixed(2)}`;
+    
+    // Atualizar total geral
+    atualizarTotalGeral();
+});
+
+function atualizarTotalGeral() {
+    const valBruto = document.getElementById('valBruto');
+    const valAtualBruto = parseFloat(valBruto.innerText.replace('R$ ', '').replace(',', '.'));
+    
+    const valPresencialPastel = parseFloat(document.getElementById('detalhePresencialPastelValor').innerText.replace('R$ ', '').replace(',', '.'));
+    const valPresencialCombo = parseFloat(document.getElementById('detalhePresencialComboValor').innerText.replace('R$ ', '').replace(',', '.'));
+    const valBebidas = parseFloat(document.getElementById('valBebidas').innerText.replace('R$ ', '').replace(',', '.'));
+    
+    const totalGeral = valAtualBruto + valPresencialPastel + valPresencialCombo + valBebidas;
+    document.getElementById('valBruto').innerText = `R$ ${totalGeral.toFixed(2)}`;
+}

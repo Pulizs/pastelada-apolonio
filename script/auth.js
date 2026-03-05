@@ -14,6 +14,9 @@ form.addEventListener('submit', (e) => {
         
         // Redireciona para a tela apropriada
         switch(funcao) {
+            case 'vendedor':
+                window.location.href = 'vendedor.html';
+                break;
             case 'aprovacao':
                 window.location.href = 'aprovacao.html';
                 break;
