@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard | Tesoureiro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .bg-royal-blue { background-color: #002366; }
+        .text-gold { color: #C5A059; }
+    </style>
+</head>
+<body class="bg-slate-50 min-h-screen">
+    <div class="p-6">
+        <h1 class="text-3xl font-black text-royal-blue mb-8">Financeiro <span class="text-gold">DeMolay</span></h1>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <p class="text-gray-400 text-sm font-bold uppercase">Total Arrecadado</p>
+                <p class="text-3xl font-black text-green-600">R$ 1.250,00</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <p class="text-gray-400 text-sm font-bold uppercase">Lotes Vendidos</p>
+                <p class="text-3xl font-black text-royal-blue">84</p>
+            </div>
+            <div class="bg-royal-blue p-6 rounded-3xl shadow-xl">
+                <p class="text-white/60 text-sm font-bold uppercase">Lucro Estimado</p>
+                <p class="text-3xl font-black text-gold">R$ 840,00</p>
+            </div>
+            <div class="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+                <p class="text-gray-400 text-sm font-bold uppercase">Gasto (Custos)</p>
+                <p class="text-3xl font-black text-red-500">R$ 410,00</p>
+            </div>
+        </div>
+
+        <div class="mt-10 bg-white rounded-3xl shadow-lg overflow-hidden">
+            <table class="w-full text-left">
+                <thead class="bg-gray-50 text-gray-400 text-xs uppercase font-bold">
+                    <tr>
+                        <th class="px-6 py-4">Item</th>
+                        <th class="px-6 py-4">Qtd</th>
+                        <th class="px-6 py-4">Total Bruto</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100 font-medium">
+                    <tr>
+                        <td class="px-6 py-4 italic">Pastel Avulso</td>
+                        <td class="px-6 py-4">40</td>
+                        <td class="px-6 py-4 text-royal-blue">R$ 400,00</td>
+                    </tr>
+                    <tr>
+                        <td class="px-6 py-4 italic">Combo Completo</td>
+                        <td class="px-6 py-4">44</td>
+                        <td class="px-6 py-4 text-royal-blue">R$ 660,00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
